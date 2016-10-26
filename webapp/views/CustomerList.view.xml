@@ -1,0 +1,43 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+          xmlns="sap.m"
+          xmlns:f="sap.ui.layout.form"
+          controllerName="controllers.CustomerList"
+          >
+	
+	<List items="{/Customers}"
+	       growing="true"
+	       growingThreshold="5"
+	       headerText="Customer List">
+		<items>
+			<StandardListItem title="{CustomerID}" description="{CompanyName}" type="Active" press="onItemPress"/>
+		</items>
+	</List>
+	
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay354"
+			minWidth="1024"
+			maxContainerCols="2"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanL="3"
+			labelSpanM="3"
+			emptySpanL="4"
+			emptySpanM="4"
+			columnsL="1"
+			columnsM="1"
+			visible = "false">
+			<f:content>
+				<Label text="CustomerID" />
+				<Text text="{/CustomerID}" />
+				<Label text="Company Name" />
+				<Text text="{/CompanyName}" />
+				<Label text="Contact Name" />
+				<Text text="{/ContactName}" />
+				<Label text="Contact Title" />
+				<Text text="{/ContactTitle}" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+	
+</mvc:View>
